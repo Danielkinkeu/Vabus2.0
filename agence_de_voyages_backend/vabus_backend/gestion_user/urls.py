@@ -6,6 +6,16 @@ from gestion_admin.views import update, delete
 from .views import *
 from . import views 
 
+# import routers from the REST framework
+# it is necessary for routing
+from rest_framework import routers
+# create a router object
+router = routers.DefaultRouter()
+ 
+# register the router
+router.register(r'tasks',views.userView, 'task')
+
+
 urlpatterns = [
     path('', home, name="home"),
     path('login/', login, name="login"),
@@ -20,6 +30,7 @@ urlpatterns = [
     path('upload/<int:gestionagence_id>', update),
     path('delete/<int:gestionagence_id>', delete),
     path('update/<int:gestionagence_id>', update), 
+    path('api/', include(router.urls)),
 
 ]  
 
