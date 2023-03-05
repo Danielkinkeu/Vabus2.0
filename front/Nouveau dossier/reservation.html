@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> VABUS </title>
+    <meta charset="utf8">
+    <meta name="author" lang="fr" content="daniel kinkeu">
+    <meta name="description" content=" vabus project">
+    <link rel="stylesheet" href="index.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <script src="index.js" async></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icone.jpg">
+</head>
+
+<body>
+    <section class="user">
+        <div class="user_options-container">
+            <div class="user_options-text">
+                <div class="user_options-unregistered">
+                    <h2 class="user_unregistered-title">Effectuer un voyage en commun?</h2>
+                    <p class="user_unregistered-text">reserver une place de bus grace a VABUS c'est choisir l'ideal et
+                        le fiabilite</p>
+                    <button class="user_unregistered-signup" id="signup-button">reserver une place</button>
+                </div>
+
+                <div class="user_options-registered">
+                    <h2 class="user_registered-title">Effectuer un voyage en famille?</h2>
+                    <p class="user_registered-text">Vabus est le meilleur site ou vous pourez reserver un vehivule pour
+                        des meilleurs moments en FaMille.</p>
+                    <button class="user_registered-login" id="login-button">Reserver un Vehicule</button>
+                </div>
+            </div>
+
+            <div class="user_options-forms" id="user_options-forms">
+                <div class="user_forms-login">
+                    <h2 class="forms_title">Login</h2>
+                    <form class="forms_form" id="forms-login">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="email" placeholder="Email" class="forms_field-input" required autofocus />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Password" class="forms_field-input" required />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <button type="button" class="forms_buttons-forgot">Forgot password?</button>
+                            <input type="submit" value="Log In" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
+                <div class="user_forms-signup">
+                    <h2 class="forms_title">reservation</h2>
+                    <form class="forms_form">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="search" placeholder="Destination" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="number" placeholder="Nombre de place" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="date" placeholder="jour de depart" class="forms_field-input" required />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <input type="submit" value="Valider" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

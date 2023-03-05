@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+
+    <title>Reservez un bus</title>
+</head>
+
+<body>
+    <nav>
+
+        <div class="slogan">
+            <span> Vabus<span>
+        </div>
+<div class="searchA">
+    <input type="text" name="rechercher" placeholder="Rechercher sur..." id="search" class="search"><a href="#">
+        <i class="fas fa-search fa-2x" style=" color: rgb(75, 72, 72);"></i><a href="filtre.html">
+             <i
+                class="fas fa-filter fa-2x"></i></a>
+
+
+</div>
+        <div class="identifiant">
+
+            <img src="images/pic-of-road.jpg" style="height:35px ; border-radius: 45%;">
+
+             NashKinkeu <!-- a travailler-->
+
+        </div>
+    </nav>
+    <div class="PartA">
+        <div class="PartAA">
+            <span class="Trier">  Trier</span>
+            <div class="formulaire">
+                <form action="traitement.php" method="GET">
+                    <div class="localisation">
+                        <input type="text" placeholder="votre localisation" name="nom" id="local">
+                        <span id="spanlocal"></span>
+                    </div>
+                    <div class="destination">
+                        <input type="text" placeholder="votre destination" name="destination" id="dest">
+                        <span id="spandes"></span>
+                    </div>
+                
+            <div class="places" style=" padding-top: 20px; display: flex;padding-bottom: 10px;"> <label> Nombre de<br> place</label>
+                    <div class="place">
+                        <input type="number"  name="place" id="nbplace" required>
+                        <span id="spanplace"></span>
+                    </div></div>
+                    <div class="forfait">
+                    <label> Forfait</label></br>
+                    <input type="radio" value=" VVIP">  VVIP  <br>
+                    <input type="radio" value=" VIP">  VIP  <br>
+                    <input type="radio" value=" Regular"> Regular   <br>
+                    <span id="spanforfait"></span>
+                    </div>
+                     <label> Heure de voyage</label></br>
+                   <div class="time" style=" padding-top: 20px; ">
+                    <input type="time" id=" time" >
+                    </div>
+                <div class="buttons">
+                    <a href="reservation.html"> <input type="submit" value="Terminer" class="forms_buttons-action"></a>
+                </div>
+                </div>
+        </div>
+
+    <div class="PartAB">
+          AGENCE DE VOYAGE PROCHE DE VOUS 
+        <br>
+        
+    </div>
+    <div class="PartABA">
+        
+    </div>
+
+
+    <div class="PartAC">
+    
+    </div>
+    </div>
+
+
+
+
