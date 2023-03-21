@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# from django.conf.urls import url
 
 urlpatterns = [
     path('', include('gestion_user.urls')),
     path('', include('gestion_authentification.urls')),
     path('', include('gestion_admin.urls')),
     path('', include('gestion_reservation.urls')),
+    path(r'^', include('gestion_admin.urls')),
     path('admin/', admin.site.urls),
+    # url(r'^', include('gestion_admin.urls')),
 ]

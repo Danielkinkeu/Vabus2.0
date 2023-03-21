@@ -10,13 +10,14 @@ def login_form(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
+            # username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
             pwd = form.cleaned_data['pwd']
-            print(username)
-            user = authenticate(username=username, password=pwd)
+            print(email)
+            user = authenticate(email=email, password=pwd)
             if user is not None:
                 login(request,user)
-                if username=='vabus' and pwd=='BUS':
+                if email=='kinkeufranck@gamil.com' and pwd=='BUS':
                     return redirect('index')
                 else:
                     return redirect('home')

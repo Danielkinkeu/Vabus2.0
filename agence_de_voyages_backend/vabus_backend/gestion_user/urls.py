@@ -13,7 +13,8 @@ from rest_framework import routers
 router = routers.DefaultRouter()
  
 # register the router
-router.register(r'tasks',views.userView, 'task')
+router.register(r'user',views.userView, 'task')
+# router.register(r'userLogin',views.login, 'task')
 
 
 urlpatterns = [

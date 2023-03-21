@@ -37,23 +37,30 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gestion_user',
-    'gestion_admin',
+    # 'gestion_user',
+    # 'gestion_admin',
     'gestion_authentification',
     'gestion_reservation',
     'corsheaders',
     'rest_framework',
+    'gestion_user.apps.GestionUserConfig',
+    'gestion_admin.apps.GestionAdminConfig',
 ]
-
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES':{
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     }
+# }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'vabus_backend.urls'
@@ -136,6 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # White listing the localhost:3000 port
 # for React
+CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
+    'http://localhost:8081',
 )

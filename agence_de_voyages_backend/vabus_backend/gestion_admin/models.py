@@ -7,6 +7,7 @@ class Gestionagence(models.Model):
     siege  = models.CharField(max_length = 30, default = 'Yaounde')
     telephone = models.CharField(max_length = 30, default = '678963685')
     description = models.CharField(max_length = 30, default='Description de l agence ')
+    published = models.BooleanField(default=False)
     
     def __str__(self):
         return self.name
