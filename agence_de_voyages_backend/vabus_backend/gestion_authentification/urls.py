@@ -1,8 +1,7 @@
 from django.urls import path
 from gestion_authentification.views import *
+from gestion_authentification import views
 
 urlpatterns = [
-    path('login_form',login_form, name='login_form'),
-    path('register_form',register_form, name='register_form'),
-    path('logout',logout_form, name='logout')
+     path('api/exemple/', views.example_view),
 ]

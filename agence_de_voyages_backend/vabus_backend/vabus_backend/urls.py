@@ -22,7 +22,7 @@ urlpatterns = [
     path('', include('gestion_authentification.urls')),
     path('', include('gestion_admin.urls')),
     path('', include('gestion_reservation.urls')),
-    path(r'^', include('gestion_admin.urls')),
+    path('', include('gestion_admin.urls')),
     path('admin/', admin.site.urls),
     # url(r'^', include('gestion_admin.urls')),
 ]

@@ -12,10 +12,6 @@ router = routers.DefaultRouter()
 router.register(r'reservation',views.reservationView, 'task')
 
 urlpatterns = [
-    # path('', homes, name="homes"),
-    path('reservation/form',reserver_form, name='reserver_form'),
-    path('reservations', liste , name='liste'),
-    path('deleteR/<int:reservation_id>', deleteR, name='deleteR'),
     path('api/', include(router.urls)),
     
 ]
