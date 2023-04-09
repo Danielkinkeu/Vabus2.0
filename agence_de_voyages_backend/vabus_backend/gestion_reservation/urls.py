@@ -12,6 +12,12 @@ router = routers.DefaultRouter()
 router.register(r'reservation',views.reservationView, 'task')
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
+    path('reservationList',views.ListReservationView.as_view(), name='reservation'),
+    path('add_reservation/',views.CreateReservationView.as_view(), name='create_reservation'),
+    path('<pk>/update_reservation/',views.UpdateReservationView.as_view(), name='reservation_update'),
+    path('<pk>/delete_reservation/',views.DeleteReservationView.as_view(), name='reservation_delete'),    
     
 ]
+
+

@@ -18,11 +18,11 @@ from django.urls import path, include
 # from django.conf.urls import url
 
 urlpatterns = [
-    path('', include('gestion_user.urls')),
-    path('', include('gestion_authentification.urls')),
-    path('', include('gestion_admin.urls')),
-    path('', include('gestion_reservation.urls')),
-    path('', include('gestion_admin.urls')),
+    path('api/gestionUser/', include('gestion_user.urls')),
+    path('api/gestionAuthentification/', include('gestion_authentification.urls')),
+    path('api/gestionAgences/', include('gestion_admin.urls')),
+    path('api/gestionreservation/', include('gestion_reservation.urls')),
+    # path('api', include('gestion_admin.urls')),
     path('admin/', admin.site.urls),
     # url(r'^', include('gestion_admin.urls')),
 ]

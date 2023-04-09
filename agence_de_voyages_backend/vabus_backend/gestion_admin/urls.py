@@ -13,17 +13,18 @@ router = routers.DefaultRouter()
  
 # register the router
 router.register(r'adminAgence',views.adminView, 'task')
+# router.register(r'agence',views.agenceView, 'task')
 
 
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
     re_path(r'^api/students/', views.students_list),
     re_path(r'^api/students/([0-9])', views.students_detail),
 
     path('agenceList',views.ListAgenceView.as_view(), name='agence'),
+    # path('agence',views.agenceView.as_view(), name='agenceTEST'),
     path('add_agence/',views.CreateAgenceView.as_view(), name='create_agence'),
     path('<pk>/update_agence/',views.UpdateAgenceView.as_view(), name='agence_update'),
     path('<pk>/delete_agence/',views.DeleteAgenceView.as_view(), name='agence_delete'),
-
 ]

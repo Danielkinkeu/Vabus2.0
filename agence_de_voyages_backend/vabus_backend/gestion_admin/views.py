@@ -3,6 +3,7 @@ from .models import Gestionagence
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
 from rest_framework import status
+from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 # import view sets from the REST framework
 from rest_framework import viewsets
@@ -13,6 +14,19 @@ from rest_framework.decorators import api_view
 from .models import Gestionagence
 from rest_framework.response import Response
 # create a class for the user model viewsets
+
+# class agenceView(APIView):
+#     def get(self, request):
+#         output = [{"name": output.name, "picture": output.picture, "siege": output.siege, "telephone": output.telephone, "description": output.description}
+#                   for output in Gestionagence.objects.all()]
+#         return Response(output)
+#     def post(self, request):
+#         serializer = adminSerializer(data=request.data)
+#         if serializer.is_valid(raise_exception=True):
+#             serializer.save()
+#             return Response(serializer.data)
+            
+    
 class adminView(viewsets.ModelViewSet):
  
     # create a serializer class and

@@ -63,6 +63,14 @@ MIDDLEWARE = [
     
 ]
 
+# REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':['rest_framework.permission.AllowAny']}
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+
 ROOT_URLCONF = 'vabus_backend.urls'
 
 TEMPLATES = [
@@ -143,7 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # White listing the localhost:3000 port
 # for React
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8081',
-)
+# CORS_ORIGIN_ALLOW_ALL = False
+# CORS_ORIGIN_WHITELIST = (
+#     'http://localhost:8081',
+# )

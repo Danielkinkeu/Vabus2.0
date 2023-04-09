@@ -4,6 +4,7 @@ from rest_framework import viewsets
 from .serializers import userSerializer
 # import the user model from the models file
 from .models import UserRegisterform
+from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 
 # create a class for the user model viewsets
 class userView(viewsets.ModelViewSet):
@@ -15,3 +16,21 @@ class userView(viewsets.ModelViewSet):
     # define a variable and populate it
     # with the user objects
     queryset = UserRegisterform.objects.all()
+
+
+class ListUserView(ListAPIView):
+    queryset= UserRegisterform.objects.all()
+    serializer_class= userSerializer
+
+class CreateUserView(CreateAPIView):
+    queryset= UserRegisterform.objects.all()
+    serializer_class= userSerializer
+    
+class UpdateUserView(UpdateAPIView): 
+    queryset= UserRegisterform.objects.all()
+    serializer_class= userSerializer
+
+class DeleteUserView(DestroyAPIView):
+    queryset= UserRegisterform.objects.all()
+    serializer_class= userSerializer
+    

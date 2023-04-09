@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse 
 from django.contrib import messages
+from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 from gestion_reservation.forms import *
 from .models import *
 from django.contrib.auth.models import User
@@ -24,3 +25,20 @@ class reservationView(viewsets.ModelViewSet):
     # with the user objects
     queryset = ReservationCreate.objects.all()
 
+
+class ListReservationView(ListAPIView):
+    queryset= ReservationCreate.objects.all()
+    serializer_class= reservationSerializer
+
+class CreateReservationView(CreateAPIView):
+    queryset= ReservationCreate.objects.all()
+    serializer_class= reservationSerializer
+    
+class UpdateReservationView(UpdateAPIView): 
+    queryset= ReservationCreate.objects.all()
+    serializer_class= reservationSerializer
+
+class DeleteReservationView(DestroyAPIView):
+    queryset= ReservationCreate.objects.all()
+    serializer_class= reservationSerializer
+ 
