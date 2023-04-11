@@ -9,7 +9,6 @@ root.render(
   <React.StrictMode>
     <App />
     {/* <Home /> */}
-    sdfghj
    <AgenceList />
   </React.StrictMode>
 );

@@ -1,5 +1,6 @@
 import React from "react";
 import "./agence.css";
+import AgenceList from "../../AgenceList";
 import bus1 from "../../img/bus2.jpeg";
 import bus2 from "../../img/bus3.jpeg";
 
@@ -18,7 +19,7 @@ const Agence = () => {
 
         <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
           <a href="/agence" className="col text-center category__link">
-            <div className="category__img category__img--large shadow">
+            <div className="category__img category__img--large shadow" >
               <img src={bus1} alt="vabus" loading="lazy" />
             </div>
             <div className="pt-1">Touristique Voyage</div>

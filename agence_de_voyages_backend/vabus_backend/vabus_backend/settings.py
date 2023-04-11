@@ -45,7 +45,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'gestion_user.apps.GestionUserConfig',
     'gestion_admin.apps.GestionAdminConfig',
+    'rest_framework_simplejwt',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100,
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
+}
+
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES':{
 #         'rest_framework_simplejwt.authentication.JWTAuthentication',

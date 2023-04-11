@@ -1,5 +1,4 @@
 import React from "react";
-
 class AgenceList extends React.Component {
     constructor(props) {
       super(props);
@@ -15,9 +14,10 @@ class AgenceList extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
+            console.log(result);
             this.setState({
               isLoaded: true,
-              agences: result.agences
+              agences: result
             });
           },
           // Note: it's important to handle errors here
@@ -41,7 +41,7 @@ class AgenceList extends React.Component {
       } else {
         return (
           <ul>
-            {agences?.map(item => (
+            {agences?.results?.map(item => (
               <li key={item.id}>
                 {item.name} {item.picture} {item.siege} {item.telephone} 
                 {item.description} {item.published}
