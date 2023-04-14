@@ -79,6 +79,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
+# AUTH_USER_MODEL = 'gestion_authentification.Account'
+
 ROOT_URLCONF = 'vabus_backend.urls'
 
 TEMPLATES = [
@@ -156,6 +158,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_FROM_EMAIL = 'kinkeufranck@gmail.com'
+
 
 # White listing the localhost:3000 port
 # for React
