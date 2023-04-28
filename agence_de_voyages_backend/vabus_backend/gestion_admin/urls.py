@@ -1,6 +1,7 @@
 from django.urls import path, include, re_path
 
-
+from vabus_backend.settings import DEBUG,STATIC_ROOT,MEDIA_ROOT, MEDIA_URL, STATIC_URL
+from django.conf.urls.static import static 
 from gestion_user.views import *
 from .views import *
 from gestion_admin import views
@@ -28,3 +29,11 @@ urlpatterns = [
     path('<pk>/update_agence/',views.UpdateAgenceView.as_view(), name='agence_update'),
     path('<pk>/delete_agence/',views.DeleteAgenceView.as_view(), name='agence_delete'),
 ]
+# + static(MEDIA_URL, document_root = MEDIA_ROOT)
+
+if DEBUG:
+    urlpatterns += static(MEDIA_URL, document_root = MEDIA_ROOT)
+
+
+
+

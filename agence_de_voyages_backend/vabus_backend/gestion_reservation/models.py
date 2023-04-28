@@ -26,7 +26,7 @@ class ReservationCreate(models.Model):
     destination = models.CharField(max_length = 30,default="lieu de destination",choices=arriver)
     datedepart = models.DateField()
     qte = models.IntegerField()
-    # user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
     # reservation=(depart, destination, datedepart, qte)
 
     

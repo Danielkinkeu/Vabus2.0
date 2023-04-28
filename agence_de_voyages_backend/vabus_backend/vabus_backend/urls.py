@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from vabus_backend.settings import DEBUG,MEDIA_ROOT, MEDIA_URL
+from django.conf.urls.static import static 
 # from django.conf.urls import url
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
@@ -33,3 +35,6 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), 
 ]
 
+
+if DEBUG:
+    urlpatterns += static(MEDIA_URL, document_root = MEDIA_ROOT)
