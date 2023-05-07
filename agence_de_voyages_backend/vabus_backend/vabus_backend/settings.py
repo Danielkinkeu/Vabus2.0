@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'gestion_reservation',
     'corsheaders',
     'rest_framework',
+    'django_rest_passwordreset',
     'gestion_user.apps.GestionUserConfig',
     'gestion_admin.apps.GestionAdminConfig',
     'rest_framework_simplejwt',
