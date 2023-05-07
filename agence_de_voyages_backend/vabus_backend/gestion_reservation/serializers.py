@@ -10,4 +10,4 @@ class reservationSerializer(serializers.ModelSerializer):
     # create a meta class
     class Meta:
         model = ReservationCreate
-        fields = ('depart', 'destination','datedepart','qte','user')
+        fields = ('depart', 'destination','datedepart','qte','user','agence')

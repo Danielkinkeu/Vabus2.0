@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 
 from django import forms
 
+from gestion_admin.models import Gestionagence
+
 departs=[
     ('yaounde','yaounde'),
     ('douala','douala'),
@@ -27,6 +29,7 @@ class ReservationCreate(models.Model):
     datedepart = models.DateField()
     qte = models.IntegerField()
     user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    agence=models.ForeignKey(Gestionagence,on_delete=models.CASCADE,null=True)
     # reservation=(depart, destination, datedepart, qte)
 
     

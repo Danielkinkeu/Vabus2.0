@@ -27,8 +27,29 @@ class reservationView(viewsets.ModelViewSet):
 
 
 class ListReservationView(ListAPIView):
-    queryset= ReservationCreate.objects.all()
+    if User.is_superuser:
+        queryset= ReservationCreate.objects.all()
+    else: 
+        queryset=ReservationCreate.objects.filter(user=User)
     serializer_class= reservationSerializer
+
+# class ListReservationView(ListAPIView):
+#     serializer_class = reservationSerializer
+
+#     def get_queryset(self):
+#         user = self.request.user
+#         if user.is_superuser:
+#             return ReservationCreate.objects.all()
+#         else:
+#             return ReservationCreate.objects.filter(user=user)
+    
+# def liste(request):
+#     user=request.user
+#     if user.username == 'vabus':
+#         reservations=ReservationCreate.objects.all()
+#     else:    
+#         reservations=ReservationCreate.objects.filter(user=user)
+#     return render(request, 'reservation_list.html', {'reservations':reservations})    
 
 class CreateReservationView(CreateAPIView):
     queryset= ReservationCreate.objects.all()
