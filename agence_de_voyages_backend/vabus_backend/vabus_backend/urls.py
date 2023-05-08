@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from gestion_authentification.views import *
+# from gestion_authentification import views
 from django.contrib import admin
 from django.urls import path, include
 from vabus_backend.settings import DEBUG,MEDIA_ROOT, MEDIA_URL
@@ -33,6 +35,9 @@ urlpatterns = [
     # path('api-auth/registration/', include('rest_auth.registration.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), 
+    path('auth/', include('djoser.urls')),
+    path('password_reset/', PasswordResetAPIView.as_view()),
+    path('password_reset_confirm/<uidb64>/<token>/', PasswordResetConfirmAPIView.as_view()),   
 ]
 
 
