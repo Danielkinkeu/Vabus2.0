@@ -46,8 +46,12 @@ INSTALLED_APPS = [
     'gestion_user.apps.GestionUserConfig',
     'gestion_admin.apps.GestionAdminConfig',
     'rest_framework_simplejwt',
+    'djoser',
 ]
 
+PASSWORD_RESET_CONFIRM_URL = 'http://localhost:8000/password_reset_confirm/{uid}/{token}'
+# USERNAME_RESET_CONFIRM_URL = 'http://localhost:8000/auth/users/reset_username/username_reset_confirm/{uid}/{token}'
+# password_reset_confirm/<uidb64>/<token>/
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100,
